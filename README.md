@@ -22,6 +22,8 @@
             - Set GKE_ZONE 
             - Change triggers based on requirement (here we trigger for evey merge/push to main branch)
                 on>push>branches
+            
+            **** If you want to see tested githubactoin then refer to https://github.com/msashish/forage-flask-app/actions/runs/825398825
         
     4) Configure SQLALCHEMY_DATABASE_URI to localhost as we use CLoud SQL Proxy side car
     
