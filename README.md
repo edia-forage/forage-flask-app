@@ -45,38 +45,8 @@
     3) Access application :-) 
     
             GET at http://<external ip shown by service>/
+            ![Alt text](<https://github.com/msashish/forage-flask-app/blob/main/get_request.png>)
+            
             POST at http://<external ip shown by service>/
     
 
-##  Local setup 
-
-###  Setup postgresql locally
-        Install postgresql from https://postgresapp.com/
-        create a DB as below [terminal] 
-            psql
-            create database demo_user;
-            \q
-    
-###  Create table by using SQLALCHEMY's migrate feature
-    
-        export SQLALCHEMY_DATABASE_URI="postgresql:///demo_user" 
-        python manage.py db init
-        python manage.py db migrate
-        python manage.py db upgrade  (to apply changes)
-        python initial_data_load.py  (to insert some sample data)
-   
-    
-###  Check table data manually [terminal]
-        psql
-        \c demo_user
-        \dt
-        select * from demo_users;
-    
-###  Test running flask app locally
-    
-        python -m flask run (Dont use flask run as it triggers cli.py from outside of venv)
-        Check at http://127.0.0.1:5000/ either through Postman for POST and GET 
-    
-        or run gunicorn
-        gunicorn app:app
-        Check at  http://127.0.0.1:8000/
